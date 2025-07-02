@@ -1,92 +1,177 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - paid ( VERSE )</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-     body {
-         background-color: gray;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Henry Panel 2.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        }
-        :root {
-            --background-image: url('https://i.imgur.com/mPu4nnK.jpeg');
-        }
-    </style>
-    <link rel="stylesheet" href="/static/css/main.css">
-    <script>
-        
-        }
+    body {
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      font-family: 'Kaushan Script', cursive;
+      overflow-x: hidden;
+      animation: fadeInBody 1s ease-in;
+    }
 
-        // Function to show services
-        function showServices() {
-            if (isTrialActive) {
-                document.getElementById('services-section').style.display = 'block'; // Show services
-            }
-        }
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-    </script>
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #1a1a2e;
+      box-shadow: 0 0 20px #ff69b4;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      color: #ff69b4;
+      text-shadow: 0 0 15px #ff69b4, 0 0 30px #f0f;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 10px #ff69b4; }
+      100% { text-shadow: 0 0 25px #ff69b4, 0 0 50px #f0f; }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      animation: slideUp 1.5s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .hero img {
+      width: 380px;
+      height: 240px;
+      object-fit: cover;
+      border: 6px solid #ff69b4;
+      box-shadow: 0 0 30px #ff69b4;
+      margin-bottom: 1rem;
+      border-radius: 20px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      color: #ffc9e3;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1rem;
+      line-height: 1.8;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 105, 180, 0.1);
+      border: 2px dashed #ff69b4;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 1.5rem auto;
+      max-width: 500px;
+      box-shadow: 0 0 20px #ff69b4;
+      transition: transform 0.4s ease;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .card:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 0 35px #ff69b4;
+    }
+
+    .card h2 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: #ffc9e3;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.7rem 1.5rem;
+      background: linear-gradient(to right, #ff69b4, #ff85c1);
+      color: #000;
+      border: none;
+      border-radius: 50px 10px 50px 10px;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      text-decoration: none;
+      box-shadow: 0 0 15px #ff69b4;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #ff85c1, #ff69b4);
+      box-shadow: 0 0 25px #ff69b4, 0 0 40px #f0f;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #1a1a2e;
+      color: #ffb6d9;
+      font-size: 0.85rem;
+      border-top: 2px solid #ff69b4;
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">( PAID ) 2.0</h1>
-            <div class="lg:hidden">
-                <span id="menu-btn" class="navbar-icon text-2xl">
-                    <i class="fas fa-bars"></i>
-                </span>
-            </div>
-        </div>
-    </nav>
-        </form>
+  <header>
+    <h1>𝗛𝗘𝗡𝗥𝗬-𝗫 2.0</h1>
+  </header>
+
+  <section class="hero">
+    <img src="https://i.ibb.co/PsktfLtw/dinuzzmd.jpg" alt="Queen Shehara" />
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2>Free Server</h2>
+      <p>Get Free Users Offline Convo Server By Owner Henry ! ... God Abusers Fucked By Owner Henry..!</p>
+      <a class="btn" href="/pair">Start Servers</a>
     </div>
 
-    <!-- Services Section -->
-    <div id="services-section" class="container mx-auto px-4 py-16">
-        <h2 class="text-3xl font-bold text-center text-primary mb-8">PAID 2.0</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Service Cards -->
-            <div class="bg-white rounded-lg shadow-lg p-15 text-center relative">
-                <div class="card-img service mt-4 mb-4">
-                    <img src="https://i.imgur.com/xVSa9Ov.gif" alt="FREE CONVO">
-                </div>
-                <h3 class="text-2xl font-bold text-primary mb-4">FREE CONVO</h3>
-                <p>Free Convo Tool By Henry Click The View Botttom And Use.</p>
-                <a href="https://i.imgur.com/lcoG9vX.jpeg"  style="color: blue "mt-4 color-blue inline-block px-6 py-2 btn-primary rounded-lg">View</button>
+   
+  
+    <div class="card">
+      <h2>Paid Servers</h2>
+      <p>Get Paid Servers By Owner Henry Inxide First Contact him !</p>
+      <a class="btn" href="https://wa.me/+919235741670" target="_blank">Start Servers</a>
+    </div>
+  </section>
 
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center relative">
-                <div class="card-img service mt-4 mb-4">
-                    <img src="https://i.imgur.com/0TVybFD.gif" alt="Mᴜʟᴛʏ Cᴏɴᴠᴏ">
-                </div>
-                <h3 class="text-2xl font-bold text-primary mb-4">Mᴜʟᴛʏ Cᴏɴᴠᴏ</h3>
-                <p>Multi Convo By Multi Tokens.</p>
-                <a href="https://ishu-server.onrender.com/" class="mt-4 color-blue inline-block px-6 py-2 btn-primary rounded-lg">View</button>
-                    </div>
-            </div>
-    <footer class="footer py-6">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
-                <a href="/terms" class="hover:text-primary">Terms</a>
-                <span class="mx-2">|</span>
-                <a href="/privacy" class="hover:text-primary">Privacy</a>
-            </div>
-
-            <div class="flex space-x-4">
-                <a href="https://www.facebook.com/Henry.inxide" class="text-2xl hover:text-primary">God Abhser + Haters Fuck3d By Owner Henry<i class="fab fa-facebook"></i></a>
-                <a href="https://wa.me/+919235741670" class="text-2xl hover:text-primary"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://github.com" class="text-2xl hover:text-primary"><i class="fab fa-github"></i></a>
-            </div>
-
-            <div class="mt-4 md:mt-0 text-center">
-                <p>© 2024 MADE BY HENRY. All Rights Reserved.</p>
-                <p>Owner ❤️ by <a href="https://www.facebook.com/Henry.inxide">HENRY'W</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/static/js/menu.js"></script>
+  <footer>
+    © 2025 LAGEND HENRY | All rights reserved 💫
+  </footer>
 </body>
 </html>
